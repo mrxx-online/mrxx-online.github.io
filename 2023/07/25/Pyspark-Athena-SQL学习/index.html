@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <!-- SEO相关 -->
   
-  <link rel="canonical" href="http://example.com/friends/"/>
+  <link rel="canonical" href="http://example.com/2023/07/25/pyspark-athena-sql学习/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -33,20 +33,21 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>friends - 每日小新</title>
-  <meta name="keywords" content="null">
+  <title>Pyspark&Athena SQL学习 - 每日小新</title>
+  <meta name="keywords" content="每日小新,null">
   <meta desc name="description" content="这是一个Test - John Doe - 每日小新">
   
-<meta property="og:type" content="website">
-<meta property="og:title" content="friends">
-<meta property="og:url" content="http://example.com/friends/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Pyspark&amp;Athena SQL学习">
+<meta property="og:url" content="http://example.com/2023/07/25/Pyspark-Athena-SQL%E5%AD%A6%E4%B9%A0/index.html">
 <meta property="og:site_name" content="每日小新">
-<meta property="og:description" content="这是一个Test">
+<meta property="og:description" content="一、Pyspark基础学习🍕 1、创建集合并输出表元数据信息123456789101112131415161718192021from pyspark.sql.types import StructType,StructField, StringType, IntegerTypedata2 &#x3D; [(&quot;James&quot;,&quot;&quot;,&quot;Smith&quot;,">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-<meta property="article:published_time" content="2023-07-22T06:09:06.000Z">
-<meta property="article:modified_time" content="2023-07-22T06:09:06.262Z">
+<meta property="article:published_time" content="2023-07-25T14:37:00.000Z">
+<meta property="article:modified_time" content="2023-07-25T14:49:43.901Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="每日小新">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
   <style>
@@ -2702,7 +2703,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
       <!-- see: /layout/_partial/scripts/_ctrl/coverCtrl.ejs -->
-      <div id="none" class='cover-wrapper page search' style="display: none;">
+      <div id="none" class='cover-wrapper post search' style="display: none;">
         
   <div class='cover-bg lazyload placeholder' data-bg="https://cdn.staticaly.com/gh/mrxx-online/image@main/P01/test8.jpg"></div>
 
@@ -2743,8 +2744,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <div class="body-wrapper">
           
 <div id="l_main" class=''>
-  <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-page" id="page" itemscope itemprop="blogPost">
-  <link itemprop="mainEntityOfPage" href="http://example.com/friends/index.html">
+  <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2023/07/25/Pyspark-Athena-SQL学习/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="每日小新">
   </span>
@@ -2765,7 +2766,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
       <h1 class="title" itemprop="name headline">
-        friends
+        Pyspark&Athena SQL学习
       </h1>
       <div class='new-meta-box'>
         
@@ -2786,10 +2787,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           
         
           
-            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2023-07-22T14:09:06+08:00">
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2023-07-25T22:37:00+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：Jul 22, 2023</p>
+    <p>发布于：Jul 25, 2023</p>
   </a>
 </div>
 
@@ -2812,9 +2813,85 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    
+    <h3 id="一、Pyspark基础学习🍕"><a href="#一、Pyspark基础学习🍕" class="headerlink" title="一、Pyspark基础学习🍕"></a>一、Pyspark基础学习🍕</h3><hr>
+<h5 id="1、创建集合并输出表元数据信息"><a href="#1、创建集合并输出表元数据信息" class="headerlink" title="1、创建集合并输出表元数据信息"></a>1、创建集合并输出表元数据信息</h5><figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">from pyspark.sql.types <span class="keyword">import</span> <span class="type">StructType</span>,<span class="type">StructField</span>, <span class="type">StringType</span>, <span class="type">IntegerType</span></span><br><span class="line">data2 = [(<span class="string">&quot;James&quot;</span>,<span class="string">&quot;&quot;</span>,<span class="string">&quot;Smith&quot;</span>,<span class="string">&quot;36636&quot;</span>,<span class="string">&quot;M&quot;</span>,<span class="number">3000</span>),</span><br><span class="line">    (<span class="string">&quot;Michael&quot;</span>,<span class="string">&quot;Rose&quot;</span>,<span class="string">&quot;&quot;</span>,<span class="string">&quot;40288&quot;</span>,<span class="string">&quot;M&quot;</span>,<span class="number">4000</span>),</span><br><span class="line">    (<span class="string">&quot;Robert&quot;</span>,<span class="string">&quot;&quot;</span>,<span class="string">&quot;Williams&quot;</span>,<span class="string">&quot;42114&quot;</span>,<span class="string">&quot;M&quot;</span>,<span class="number">4000</span>),</span><br><span class="line">    (<span class="string">&quot;Maria&quot;</span>,<span class="string">&quot;Anne&quot;</span>,<span class="string">&quot;Jones&quot;</span>,<span class="string">&quot;39192&quot;</span>,<span class="string">&quot;F&quot;</span>,<span class="number">4000</span>),</span><br><span class="line">    (<span class="string">&quot;Jen&quot;</span>,<span class="string">&quot;Mary&quot;</span>,<span class="string">&quot;Brown&quot;</span>,<span class="string">&quot;&quot;</span>,<span class="string">&quot;F&quot;</span>,<span class="number">-1</span>)</span><br><span class="line">  ]</span><br><span class="line"></span><br><span class="line">schema = <span class="type">StructType</span>([ \</span><br><span class="line">    <span class="type">StructField</span>(<span class="string">&quot;firstname&quot;</span>,<span class="type">StringType</span>(),<span class="type">True</span>), \</span><br><span class="line">    <span class="type">StructField</span>(<span class="string">&quot;middlename&quot;</span>,<span class="type">StringType</span>(),<span class="type">True</span>), \</span><br><span class="line">    <span class="type">StructField</span>(<span class="string">&quot;lastname&quot;</span>,<span class="type">StringType</span>(),<span class="type">True</span>), \</span><br><span class="line">    <span class="type">StructField</span>(<span class="string">&quot;id&quot;</span>, <span class="type">StringType</span>(), <span class="type">True</span>), \</span><br><span class="line">    <span class="type">StructField</span>(<span class="string">&quot;gender&quot;</span>, <span class="type">StringType</span>(), <span class="type">True</span>), \</span><br><span class="line">    <span class="type">StructField</span>(<span class="string">&quot;salary&quot;</span>, <span class="type">IntegerType</span>(), <span class="type">True</span>) \</span><br><span class="line">  ])</span><br><span class="line"> </span><br><span class="line">df = spark.createDataFrame(data=data2,schema=schema)</span><br><span class="line">df.printSchema()</span><br><span class="line">df.show(truncate=<span class="type">False</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h5 id="2-RDD-to-DF-DF-to-Pandas"><a href="#2-RDD-to-DF-DF-to-Pandas" class="headerlink" title="2.RDD to DF &amp; DF to Pandas"></a>2.RDD to DF &amp; DF to Pandas</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">print(&quot; rdd to DF &quot;)</span><br><span class="line">dept <span class="operator">=</span> [(&quot;Finance&quot;,<span class="number">10</span>),(&quot;Marketing&quot;,<span class="number">20</span>),(&quot;Sales&quot;,<span class="number">30</span>),(&quot;IT&quot;,<span class="number">40</span>)]</span><br><span class="line">rdd <span class="operator">=</span> spark.sparkContext.parallelize(dept)</span><br><span class="line">df <span class="operator">=</span> rdd.toDF()</span><br><span class="line">df.printSchema()</span><br><span class="line">print(&quot;DF to pandas&quot;)</span><br><span class="line">data <span class="operator">=</span> [(&quot;James&quot;,&quot;&quot;,&quot;Smith&quot;,&quot;36636&quot;,&quot;M&quot;,<span class="number">60000</span>),</span><br><span class="line">        (&quot;Michael&quot;,&quot;Rose&quot;,&quot;&quot;,&quot;40288&quot;,&quot;M&quot;,<span class="number">70000</span>),</span><br><span class="line">        (&quot;Robert&quot;,&quot;&quot;,&quot;Williams&quot;,&quot;42114&quot;,&quot;&quot;,<span class="number">400000</span>),</span><br><span class="line">        (&quot;Maria&quot;,&quot;Anne&quot;,&quot;Jones&quot;,&quot;39192&quot;,&quot;F&quot;,<span class="number">500000</span>),</span><br><span class="line">        (&quot;Jen&quot;,&quot;Mary&quot;,&quot;Brown&quot;,&quot;&quot;,&quot;F&quot;,<span class="number">0</span>)]</span><br><span class="line">columns <span class="operator">=</span> [&quot;first_name&quot;,&quot;middle_name&quot;,&quot;last_name&quot;,&quot;dob&quot;,&quot;gender&quot;,&quot;salary&quot;]</span><br><span class="line">pysparkDF <span class="operator">=</span> spark.createDataFrame(data <span class="operator">=</span> data, schema <span class="operator">=</span> columns)</span><br><span class="line">pysparkDF.printSchema()</span><br><span class="line">pysparkDF.show(<span class="keyword">truncate</span><span class="operator">=</span><span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h5 id="3-ROW类型数据定义及操作"><a href="#3-ROW类型数据定义及操作" class="headerlink" title="3.ROW类型数据定义及操作"></a>3.ROW类型数据定义及操作</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">print(&quot; date type of row&quot;)</span><br><span class="line"><span class="keyword">from</span> pyspark.sql import <span class="type">Row</span></span><br><span class="line"><span class="type">row</span><span class="operator">=</span><span class="type">Row</span>(&quot;James&quot;,<span class="number">40</span>)</span><br><span class="line">print(<span class="type">row</span>[<span class="number">0</span>] <span class="operator">+</span>&quot;,&quot;<span class="operator">+</span>str(<span class="type">row</span>[<span class="number">1</span>]))</span><br><span class="line"></span><br><span class="line">print(&quot; object type of row&quot;)</span><br><span class="line">row1<span class="operator">=</span><span class="type">Row</span>(name<span class="operator">=</span>&quot;alis&quot;,age<span class="operator">=</span><span class="number">20</span>)</span><br><span class="line">person <span class="operator">=</span> <span class="type">Row</span>(&quot;name&quot;,&quot;age&quot;)</span><br><span class="line">p1 <span class="operator">=</span> person(&quot;xiaoli&quot;,<span class="number">20</span>)</span><br><span class="line">print(row1[<span class="number">0</span>]<span class="operator">+</span>&quot;,&quot;<span class="operator">+</span>str(p1.name))</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h5 id="4-注册UDF函数-每个单词的第一个字母转换为大写字母"><a href="#4-注册UDF函数-每个单词的第一个字母转换为大写字母" class="headerlink" title="4.注册UDF函数(每个单词的第一个字母转换为大写字母)"></a>4.注册UDF函数(每个单词的第一个字母转换为大写字母)</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">def convertCase(str):</span><br><span class="line">    resStr<span class="operator">=</span>&quot;&quot;</span><br><span class="line">    arr <span class="operator">=</span> str.split(&quot; &quot;)</span><br><span class="line">    <span class="keyword">for</span> x <span class="keyword">in</span> arr:</span><br><span class="line">       resStr<span class="operator">=</span> resStr <span class="operator">+</span> x[<span class="number">0</span>:<span class="number">1</span>].<span class="built_in">upper</span>() <span class="operator">+</span> x[<span class="number">1</span>:len(x)] <span class="operator">+</span> &quot; &quot;</span><br><span class="line">    <span class="keyword">return</span> resStr </span><br><span class="line"></span><br><span class="line">&quot;&quot;&quot; Converting function to UDF &quot;&quot;&quot;</span><br><span class="line">convertUDF <span class="operator">=</span> udf(lambda z: convertCase(z))</span><br><span class="line"></span><br><span class="line">df.select(col(&quot;Seqno&quot;), \</span><br><span class="line">    convertUDF(col(&quot;Name&quot;)).alias(&quot;Name&quot;) ) \</span><br><span class="line">.<span class="keyword">show</span>(<span class="keyword">truncate</span><span class="operator">=</span><span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h5 id="5-按照索引选择列"><a href="#5-按照索引选择列" class="headerlink" title="5.按照索引选择列"></a>5.按照索引选择列</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df.select(df.columns[:<span class="number">3</span>]).<span class="keyword">show</span>(<span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h5 id="6-多层结构数据toDF"><a href="#6-多层结构数据toDF" class="headerlink" title="6.多层结构数据toDF"></a>6.多层结构数据toDF</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">data1 <span class="operator">=</span> [((&quot;James&quot;,<span class="keyword">None</span>,&quot;Smith&quot;),&quot;OH&quot;,&quot;M&quot;),</span><br><span class="line">        ((&quot;Anna&quot;,&quot;Rose&quot;,&quot;&quot;),&quot;NY&quot;,&quot;F&quot;),</span><br><span class="line">        ((&quot;Julia&quot;,&quot;&quot;,&quot;Williams&quot;),&quot;OH&quot;,&quot;F&quot;),</span><br><span class="line">        ((&quot;Maria&quot;,&quot;Anne&quot;,&quot;Jones&quot;),&quot;NY&quot;,&quot;M&quot;),</span><br><span class="line">        ((&quot;Jen&quot;,&quot;Mary&quot;,&quot;Brown&quot;),&quot;NY&quot;,&quot;M&quot;),</span><br><span class="line">        ((&quot;Mike&quot;,&quot;Mary&quot;,&quot;Williams&quot;),&quot;OH&quot;,&quot;M&quot;)</span><br><span class="line">        ]</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> pyspark.sql.types import StructType,StructField, StringType        </span><br><span class="line">schema1 <span class="operator">=</span> StructType([</span><br><span class="line">    StructField(<span class="string">&#x27;name&#x27;</span>, StructType([</span><br><span class="line">         StructField(<span class="string">&#x27;firstname&#x27;</span>, StringType(), <span class="literal">True</span>),</span><br><span class="line">         StructField(<span class="string">&#x27;middlename&#x27;</span>, StringType(), <span class="literal">True</span>),</span><br><span class="line">         StructField(<span class="string">&#x27;lastname&#x27;</span>, StringType(), <span class="literal">True</span>)</span><br><span class="line">         ])),</span><br><span class="line">     StructField(<span class="string">&#x27;state&#x27;</span>, StringType(), <span class="literal">True</span>),</span><br><span class="line">     StructField(<span class="string">&#x27;gender&#x27;</span>, StringType(), <span class="literal">True</span>)</span><br><span class="line">     ])</span><br><span class="line"></span><br><span class="line">df2 <span class="operator">=</span> spark.createDataFrame(data <span class="operator">=</span> data1, schema <span class="operator">=</span> schema1)</span><br><span class="line">df2.printSchema()</span><br><span class="line">df2.show(<span class="keyword">truncate</span><span class="operator">=</span><span class="literal">False</span>) # shows <span class="keyword">all</span> columns</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h5 id="7-详细表连接关系"><a href="#7-详细表连接关系" class="headerlink" title="7.详细表连接关系"></a>7.详细表连接关系</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ed <span class="operator">=</span> empDF.join(deptDF,empDF.emp_dept_id <span class="operator">=</span><span class="operator">=</span>  deptDF.dept_id,&quot;full&quot;)</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h5 id="8、构建临时DataFrame"><a href="#8、构建临时DataFrame" class="headerlink" title="8、构建临时DataFrame"></a>8、构建临时DataFrame</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pyspark.sql.types import StructType,StructField, StringType, IntegerType</span><br><span class="line">data2 <span class="operator">=</span> [(<span class="number">10</span>,<span class="number">3</span>),</span><br><span class="line">    (<span class="number">100</span>,<span class="number">30</span>)</span><br><span class="line">  ]</span><br><span class="line"></span><br><span class="line">schema <span class="operator">=</span> StructType([ \</span><br><span class="line">    StructField(&quot;col01&quot;,IntegerType(),<span class="literal">True</span>), \</span><br><span class="line">    StructField(&quot;col02&quot;, IntegerType(), <span class="literal">True</span>) \</span><br><span class="line">  ])</span><br><span class="line"></span><br><span class="line">df <span class="operator">=</span> spark.createDataFrame(data<span class="operator">=</span>data2,schema<span class="operator">=</span>schema)</span><br><span class="line">df.printSchema()</span><br><span class="line"></span><br><span class="line">df <span class="operator">=</span> df.withColumn(<span class="string">&#x27;result&#x27;</span>,(col(<span class="string">&#x27;col01&#x27;</span>).<span class="built_in">cast</span>(DoubleType())<span class="operator">/</span>col(<span class="string">&#x27;col02&#x27;</span>).<span class="built_in">cast</span>(DoubleType())))</span><br><span class="line">df.show(<span class="number">20</span>)</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h5 id="9、partition读取一个范围数据"><a href="#9、partition读取一个范围数据" class="headerlink" title="9、partition读取一个范围数据"></a>9、partition读取一个范围数据</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#partitionstate1 <span class="operator">=</span> &quot;dt &gt;= 20221001 and dt&lt;= 20221201&quot;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="二、Athena-SQL-基础学习🍜"><a href="#二、Athena-SQL-基础学习🍜" class="headerlink" title="二、Athena SQL 基础学习🍜"></a>二、Athena SQL 基础学习🍜</h3><hr>
+<h5 id="1⃣️-获取一年的第几周"><a href="#1⃣️-获取一年的第几周" class="headerlink" title="1⃣️ 获取一年的第几周"></a>1⃣️ 获取一年的第几周</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="built_in">Extract</span>(week <span class="keyword">from</span> <span class="type">date</span><span class="string">&#x27;2022-12-11&#x27;</span>) <span class="keyword">as</span> week_number</span><br><span class="line"><span class="built_in">Extract</span>(week(Sunday) <span class="keyword">from</span> <span class="type">date</span>) <span class="keyword">as</span> week_number</span><br></pre></td></tr></table></figure>
+
+<h5 id="2⃣️Int-to-Date"><a href="#2⃣️Int-to-Date" class="headerlink" title="2⃣️Int to Date"></a>2⃣️Int to Date</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> date_parse(concat(substr(<span class="built_in">cast</span>(<span class="number">20221214</span> <span class="keyword">as</span> <span class="type">varchar</span>), <span class="number">1</span>, <span class="number">4</span>),<span class="string">&#x27;-&#x27;</span>,substr(<span class="built_in">cast</span>(<span class="number">20221121</span> <span class="keyword">as</span> <span class="type">varchar</span>), <span class="number">5</span>, <span class="number">2</span>),<span class="string">&#x27;-&#x27;</span>,substr(<span class="built_in">cast</span>(<span class="number">20221121</span> <span class="keyword">as</span> <span class="type">varchar</span>), <span class="number">7</span>, <span class="number">2</span>)),<span class="string">&#x27;%Y-%m-%d&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<h5 id="3⃣️根据日期得出周几"><a href="#3⃣️根据日期得出周几" class="headerlink" title="3⃣️根据日期得出周几"></a>3⃣️根据日期得出周几</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> format_datetime(<span class="keyword">day</span>, <span class="string">&#x27;EEEE&#x27;</span>)</span><br><span class="line"><span class="keyword">FROM</span> (</span><br><span class="line">  <span class="keyword">VALUES</span> <span class="type">DATE</span> <span class="string">&#x27;2022-12-14&#x27;</span></span><br><span class="line">) t(<span class="keyword">day</span>)</span><br></pre></td></tr></table></figure>
+
+<h5 id="4⃣️-Order——type"><a href="#4⃣️-Order——type" class="headerlink" title="4⃣️ Order——type"></a>4⃣️ Order——type</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>普通单 <span class="number">2</span>父单 <span class="number">3</span>子单</span><br></pre></td></tr></table></figure>
+
+<h5 id="5⃣️合单"><a href="#5⃣️合单" class="headerlink" title="5⃣️合单"></a>5⃣️合单</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">t_order ：order_source <span class="number">1</span>:下单 <span class="number">2</span>合单 <span class="number">3</span>被合单</span><br></pre></td></tr></table></figure>
+
+<h5 id="6⃣️-关于商品"><a href="#6⃣️-关于商品" class="headerlink" title="6⃣️ 关于商品"></a>6⃣️ 关于商品</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sku没有记录原价，只有售价</span><br></pre></td></tr></table></figure>
+
+<h5 id="7⃣️weekofyear-✨dayofweek"><a href="#7⃣️weekofyear-✨dayofweek" class="headerlink" title="7⃣️weekofyear()✨dayofweek"></a>7⃣️weekofyear()✨dayofweek</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">weekofyear:周一到周日</span><br><span class="line">dayofweek :周日到周六 <span class="number">1</span>～<span class="number">7</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="8⃣️-创建临时数据，遍历数组"><a href="#8⃣️-创建临时数据，遍历数组" class="headerlink" title="8⃣️ 创建临时数据，遍历数组"></a>8⃣️ 创建临时数据，遍历数组</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">WITH</span></span><br><span class="line">dataset <span class="keyword">AS</span> (</span><br><span class="line">  <span class="keyword">SELECT</span> <span class="keyword">ARRAY</span></span><br><span class="line">  [</span><br><span class="line">    <span class="keyword">ARRAY</span>[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>],</span><br><span class="line">    <span class="keyword">ARRAY</span>[<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>],</span><br><span class="line">    <span class="keyword">ARRAY</span>[<span class="number">9</span>,<span class="number">0</span>]</span><br><span class="line">  ] <span class="keyword">AS</span> items</span><br><span class="line">),</span><br><span class="line">item <span class="keyword">AS</span> (</span><br><span class="line">  <span class="keyword">SELECT</span> i <span class="keyword">AS</span> array_items</span><br><span class="line">  <span class="keyword">FROM</span> dataset, <span class="built_in">UNNEST</span>(items) <span class="keyword">AS</span> t(i)</span><br><span class="line">)</span><br><span class="line"><span class="keyword">SELECT</span> array_items, reduce(array_items, <span class="number">0</span> , (s, x) <span class="operator">-</span><span class="operator">&gt;</span> s <span class="operator">+</span> x, s <span class="operator">-</span><span class="operator">&gt;</span> s) <span class="keyword">AS</span> total</span><br><span class="line"><span class="keyword">FROM</span> item;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h5 id="9⃣️-url解析"><a href="#9⃣️-url解析" class="headerlink" title="9⃣️ url解析"></a>9⃣️ url解析</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">url_extract_parameter(url,<span class="string">&#x27;utm_source&#x27;</span>)<span class="operator">=</span><span class="string">&#x27;Event&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="🔟-Athena表元数据信息修复"><a href="#🔟-Athena表元数据信息修复" class="headerlink" title="🔟 Athena表元数据信息修复"></a>🔟 Athena表元数据信息修复</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">MSCK REPAIR <span class="keyword">TABLE</span> traffic.hive_traffic_detail</span><br></pre></td></tr></table></figure>
+
+<h5 id="1⃣️1⃣️-Athena中对跨年周进行处理"><a href="#1⃣️1⃣️-Athena中对跨年周进行处理" class="headerlink" title="1⃣️1⃣️ Athena中对跨年周进行处理"></a>1⃣️1⃣️ Athena中对跨年周进行处理</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> date_format(<span class="type">date</span> <span class="string">&#x27;2023-01-01&#x27;</span>, <span class="string">&#x27;%x-%v&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<h5 id="1⃣️2⃣️Athena解析URL函数url-extract-parameter"><a href="#1⃣️2⃣️Athena解析URL函数url-extract-parameter" class="headerlink" title="1⃣️2⃣️Athena解析URL函数url_extract_parameter"></a>1⃣️2⃣️Athena解析URL函数url_extract_parameter</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> user_id,<span class="type">time</span>,device_id,url,</span><br><span class="line">       url_extract_parameter(url,<span class="string">&#x27;utm_source&#x27;</span>) utm_source,</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="1⃣️3⃣️QS获取近两个月数据"><a href="#1⃣️3⃣️QS获取近两个月数据" class="headerlink" title="1⃣️3⃣️QS获取近两个月数据"></a>1⃣️3⃣️QS获取近两个月数据</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="operator">*</span> <span class="keyword">from</span> default.hive_lkb_lock_stock_report <span class="keyword">where</span> dt <span class="operator">&gt;=</span> date_format(date_add(<span class="string">&#x27;Month&#x27;</span>,<span class="number">-2</span>,<span class="built_in">current_timestamp</span>),<span class="string">&#x27;%Y%m%d&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<h5 id="1⃣️4⃣️Athena转义字符：‘"><a href="#1⃣️4⃣️Athena转义字符：‘" class="headerlink" title="1⃣️4⃣️Athena转义字符：‘"></a>1⃣️4⃣️Athena转义字符：‘</h5><hr>
+<h3 id="三、Spark调优"><a href="#三、Spark调优" class="headerlink" title="三、Spark调优"></a>三、Spark调优</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">选择以下解决方案之一：</span><br><span class="line"></span><br><span class="line">选项 <span class="number">1.</span>禁用广播加入。</span><br><span class="line">设置 spark.conf.set(&quot;spark.sql.autoBroadcastJoinThreshold&quot;, <span class="number">-1</span>)</span><br><span class="line"></span><br><span class="line">此选项禁用广播加入。</span><br><span class="line"></span><br><span class="line">选项 <span class="number">2.</span>增加广播超时。</span><br><span class="line">将 Spark.sql.broadcastTimeout 增加到 <span class="number">300</span> 以上的值。例如，设置 spark.sql.broadcastTimeout<span class="operator">=</span><span class="number">2000</span>。</span><br><span class="line"></span><br><span class="line">不太推荐此选项。如果要保留广播加入，请使用此选项。</span><br><span class="line"></span><br><span class="line">选项 <span class="number">3.</span>再次尝试失败的应用程序。</span><br><span class="line">设置 spark.yarn.maxAppTrys<span class="operator">=</span><span class="number">2</span>。</span><br><span class="line"></span><br><span class="line">最不推荐此选项。设置上述属性时，Spark 会尝试再次运行任何失败的应用程序，包括不使用广播联接的应用程序。此更改会导致较高的总体运行时间。</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p><img src="https://cdn.staticaly.com/gh/mrxx-online/image@main/P01/202307252246601.jpg" class="lazyload" data-srcset="https://cdn.staticaly.com/gh/mrxx-online/image@main/P01/202307252246601.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p>持续更新中…….</p>
+
   </div>
   
+  
+    
+    <div class='footer'>
+       <!-- 参考资料、相关资料等 -->
+      
+       <!-- 相关文章 -->
+      
+      <!-- 版权声明组件 -->
+      
+      <!-- 打赏组件 -->
+      
+    </div>
   
   
     
@@ -2824,10 +2901,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-07-22T14:09:06+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-07-25T22:49:43+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Jul 22, 2023</p>
+    <p>更新于：Jul 25, 2023</p>
   </a>
 </div>
 
@@ -2835,6 +2912,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         
           
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E6%AF%8F%E6%97%A5%E5%B0%8F%E6%96%B0/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>每日小新</p></a></div>
+  <span hidden itemprop="keywords">每日小新</span>
+
 
         
       
@@ -2846,7 +2927,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/friends/index.html&title=friends - 每日小新&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/2023/07/25/Pyspark-Athena-SQL%E5%AD%A6%E4%B9%A0/&title=Pyspark&Athena SQL学习 - 每日小新&summary="
           
           >
           
@@ -2858,7 +2939,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/friends/index.html&title=friends - 每日小新&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/2023/07/25/Pyspark-Athena-SQL%E5%AD%A6%E4%B9%A0/&title=Pyspark&Athena SQL学习 - 每日小新&summary="
           
           >
           
@@ -2870,7 +2951,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/friends/index.html&title=friends - 每日小新&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/2023/07/25/Pyspark-Athena-SQL%E5%AD%A6%E4%B9%A0/&title=Pyspark&Athena SQL学习 - 每日小新&summary="
           
           >
           
@@ -2901,6 +2982,19 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
 
   
+    <div class="prev-next">
+      
+      
+        <a class='next' href='/2023/07/24/PySpark%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/'>
+          <p class='title'>PySpark基础知识<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>Pyspark 基础篇🍎
+一、AWS 架构
+① AWS Glue:工作平台，包括脚本的编写以及管理脚本的运行状态以及调度等（主要：数据库配置、ETL和数据转换脚本编写、调度）
+② Amazon...</p>
+        </a>
+      
+    </div>
+  
   <!-- Custom Files postEnd begin-->
   
   <!-- Custom Files postEnd end-->
@@ -2912,7 +3006,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <article class="post white-box shadow floatable blur" id="comments">
     <span hidden>
-      <meta itemprop="discussionUrl" content="/friends/index.html#comments">
+      <meta itemprop="discussionUrl" content="/2023/07/25/Pyspark-Athena-SQL%E5%AD%A6%E4%B9%A0/index.html#comments">
     </span>
     <p ct><i class='fa-solid fa-comments'></i> 评论</p>
     
@@ -2944,9 +3038,19 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
 
 
-  <div class="">
-    <!-- pjax占位 -->
-  </div>
+  <section class="widget toc-wrapper desktop mobile " id="toc-div" >
+    
+  <header>
+    
+      <i class="fa-solid fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81Pyspark%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%F0%9F%8D%95"><span class="toc-text">一、Pyspark基础学习🍕</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1%E3%80%81%E5%88%9B%E5%BB%BA%E9%9B%86%E5%90%88%E5%B9%B6%E8%BE%93%E5%87%BA%E8%A1%A8%E5%85%83%E6%95%B0%E6%8D%AE%E4%BF%A1%E6%81%AF"><span class="toc-text">1、创建集合并输出表元数据信息</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-RDD-to-DF-DF-to-Pandas"><span class="toc-text">2.RDD to DF &amp; DF to Pandas</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-ROW%E7%B1%BB%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%AE%9A%E4%B9%89%E5%8F%8A%E6%93%8D%E4%BD%9C"><span class="toc-text">3.ROW类型数据定义及操作</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-%E6%B3%A8%E5%86%8CUDF%E5%87%BD%E6%95%B0-%E6%AF%8F%E4%B8%AA%E5%8D%95%E8%AF%8D%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%AD%97%E6%AF%8D%E8%BD%AC%E6%8D%A2%E4%B8%BA%E5%A4%A7%E5%86%99%E5%AD%97%E6%AF%8D"><span class="toc-text">4.注册UDF函数(每个单词的第一个字母转换为大写字母)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#5-%E6%8C%89%E7%85%A7%E7%B4%A2%E5%BC%95%E9%80%89%E6%8B%A9%E5%88%97"><span class="toc-text">5.按照索引选择列</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#6-%E5%A4%9A%E5%B1%82%E7%BB%93%E6%9E%84%E6%95%B0%E6%8D%AEtoDF"><span class="toc-text">6.多层结构数据toDF</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#7-%E8%AF%A6%E7%BB%86%E8%A1%A8%E8%BF%9E%E6%8E%A5%E5%85%B3%E7%B3%BB"><span class="toc-text">7.详细表连接关系</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#8%E3%80%81%E6%9E%84%E5%BB%BA%E4%B8%B4%E6%97%B6DataFrame"><span class="toc-text">8、构建临时DataFrame</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#9%E3%80%81partition%E8%AF%BB%E5%8F%96%E4%B8%80%E4%B8%AA%E8%8C%83%E5%9B%B4%E6%95%B0%E6%8D%AE"><span class="toc-text">9、partition读取一个范围数据</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81Athena-SQL-%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%F0%9F%8D%9C"><span class="toc-text">二、Athena SQL 基础学习🍜</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1%E2%83%A3%EF%B8%8F-%E8%8E%B7%E5%8F%96%E4%B8%80%E5%B9%B4%E7%9A%84%E7%AC%AC%E5%87%A0%E5%91%A8"><span class="toc-text">1⃣️ 获取一年的第几周</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2%E2%83%A3%EF%B8%8FInt-to-Date"><span class="toc-text">2⃣️Int to Date</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3%E2%83%A3%EF%B8%8F%E6%A0%B9%E6%8D%AE%E6%97%A5%E6%9C%9F%E5%BE%97%E5%87%BA%E5%91%A8%E5%87%A0"><span class="toc-text">3⃣️根据日期得出周几</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4%E2%83%A3%EF%B8%8F-Order%E2%80%94%E2%80%94type"><span class="toc-text">4⃣️ Order——type</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#5%E2%83%A3%EF%B8%8F%E5%90%88%E5%8D%95"><span class="toc-text">5⃣️合单</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#6%E2%83%A3%EF%B8%8F-%E5%85%B3%E4%BA%8E%E5%95%86%E5%93%81"><span class="toc-text">6⃣️ 关于商品</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#7%E2%83%A3%EF%B8%8Fweekofyear-%E2%9C%A8dayofweek"><span class="toc-text">7⃣️weekofyear()✨dayofweek</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#8%E2%83%A3%EF%B8%8F-%E5%88%9B%E5%BB%BA%E4%B8%B4%E6%97%B6%E6%95%B0%E6%8D%AE%EF%BC%8C%E9%81%8D%E5%8E%86%E6%95%B0%E7%BB%84"><span class="toc-text">8⃣️ 创建临时数据，遍历数组</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#9%E2%83%A3%EF%B8%8F-url%E8%A7%A3%E6%9E%90"><span class="toc-text">9⃣️ url解析</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%F0%9F%94%9F-Athena%E8%A1%A8%E5%85%83%E6%95%B0%E6%8D%AE%E4%BF%A1%E6%81%AF%E4%BF%AE%E5%A4%8D"><span class="toc-text">🔟 Athena表元数据信息修复</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1%E2%83%A3%EF%B8%8F1%E2%83%A3%EF%B8%8F-Athena%E4%B8%AD%E5%AF%B9%E8%B7%A8%E5%B9%B4%E5%91%A8%E8%BF%9B%E8%A1%8C%E5%A4%84%E7%90%86"><span class="toc-text">1⃣️1⃣️ Athena中对跨年周进行处理</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1%E2%83%A3%EF%B8%8F2%E2%83%A3%EF%B8%8FAthena%E8%A7%A3%E6%9E%90URL%E5%87%BD%E6%95%B0url-extract-parameter"><span class="toc-text">1⃣️2⃣️Athena解析URL函数url_extract_parameter</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1%E2%83%A3%EF%B8%8F3%E2%83%A3%EF%B8%8FQS%E8%8E%B7%E5%8F%96%E8%BF%91%E4%B8%A4%E4%B8%AA%E6%9C%88%E6%95%B0%E6%8D%AE"><span class="toc-text">1⃣️3⃣️QS获取近两个月数据</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1%E2%83%A3%EF%B8%8F4%E2%83%A3%EF%B8%8FAthena%E8%BD%AC%E4%B9%89%E5%AD%97%E7%AC%A6%EF%BC%9A%E2%80%98"><span class="toc-text">1⃣️4⃣️Athena转义字符：‘</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E3%80%81Spark%E8%B0%83%E4%BC%98"><span class="toc-text">三、Spark调优</span></a></li></ol>
+    </div>
+  </section>
 
   
 
@@ -3004,7 +3108,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <pjax>
 <script>
   window.pdata={}
-  pdata.ispage=false;
+  pdata.ispage=true;
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   pdata.commentConfig={};
@@ -3621,7 +3725,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"每日小新","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"这是一个Test"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"每日小新"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"每日小新","url":"http://example.com/","keywords":null,"description":"这是一个Test","author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"这是一个Test"},"publisher":{"@type":"Organization","name":"每日小新","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"friends","description":"这是一个Test","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/friends/index.html"},"author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"每日小新","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/friends/index.html","wordCount":0,"datePublished":"2023-07-22T06:09:06.000Z","dateModified":"2023-07-22T06:09:06.262Z","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"每日小新","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"这是一个Test"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"每日小新"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2023/07/25/Pyspark-Athena-SQL学习/","name":"Pyspark&Athena SQL学习"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"每日小新","url":"http://example.com/","keywords":null,"description":"这是一个Test","author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"这是一个Test"},"publisher":{"@type":"Organization","name":"每日小新","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"Pyspark&Athena SQL学习","description":"这是一个Test","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2023/07/25/Pyspark-Athena-SQL%E5%AD%A6%E4%B9%A0/"},"author":{"@type":"Person","name":"John Doe","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"每日小新","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2023/07/25/Pyspark-Athena-SQL%E5%AD%A6%E4%B9%A0/","wordCount":0,"datePublished":"2023-07-25T14:37:00.000Z","dateModified":"2023-07-25T14:49:43.901Z","keywords":"每日小新","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
